@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function address()
+    {
+        return $this->hasOne(Address::class);
+    }
+
+    // public function countryName()
+    // {
+    //     return Address::where('user_id', $this->id)->first()->country;
+    // }
 }
